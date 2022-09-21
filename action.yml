@@ -1,0 +1,16 @@
+name: 'Standardize PR Comment'
+description: 'Collect the relevant attributes of an issue comment or pull request review comment'
+outputs:
+  comment:
+    description: 'The text of the comment'
+  comments_url:
+    description: "The PR's comments URL"
+  number:
+    description: 'The issue number (i.e. the number at the end of the URL)'
+  repository_url:
+    description: 'The URL of the repository'
+  url:
+    description: 'The URL of the pull request'
+runs:
+  using: 'node12'
+  main: 'src/main.js'
