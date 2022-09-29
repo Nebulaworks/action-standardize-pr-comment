@@ -1,0 +1,26 @@
+name: Test This Action
+
+on:
+  pull_request_review_comment:
+    types:
+    - created
+  issue_comment:
+    types:
+    - created
+
+jobs:
+  self-test:
+    runs-on: ${{ fromJSON('["ubuntu-latest", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Run action
+      id: run-action
+      # You are not misreading, this is just a dot, meaning "the root of the current repo"
+      uses: "./"
+    - name: Echo the input
+      if: startsWith(steps.run-action.outputs.comment, 'self-test')
+      env:
+        USER_INPUT: ${{ steps.run-action.outputs.comment }}
+      run: |
+        echo "User input received: $USER_INPUT"
