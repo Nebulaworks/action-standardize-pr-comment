@@ -1,6 +1,6 @@
 {
   "name": "standardize-pr-comment",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Translates either an issue_comment or pull_request_review_comment event into a normalized description of a comment",
   "main": "src/main.js",
   "scripts": {
