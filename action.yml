@@ -12,5 +12,5 @@ outputs:
   url:
     description: 'The URL of the pull request'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'src/main.js'
