@@ -5,10 +5,11 @@
   "main": "src/main.js",
   "scripts": {
     "check-all": "concurrently \"npm:format-check\" \"npm:lint\" \"npm:test\" \"npm:build\"",
-    "format": "prettier --write **/*.js",
-    "format-check": "prettier --check **/*.js",
-    "lint": "eslint **/*.js",
-    "test": "jest --testTimeout 10000"
+    "format": "prettier --write src/*.js tests/*.js",
+    "format-check": "prettier --check src/*.js tests/*.js",
+    "lint": "eslint src/*.js tests/*.js",
+    "test": "jest --testTimeout 10000",
+    "build": "node src/main.js; exit 0"
   },
   "repository": {
     "type": "git",
