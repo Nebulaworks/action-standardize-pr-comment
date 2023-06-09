@@ -1,6 +1,6 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
-const {standardizeCommentContext} = require('./standardize.js');
+const core = require("@actions/core");
+const github = require("@actions/github");
+const { standardizeCommentContext } = require("./standardize.js");
 
 try {
   const standardized = standardizeCommentContext(github.context);
