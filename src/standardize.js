@@ -4,7 +4,7 @@ function standardizeIssueComment(event) {
     comments_url: event.issue.comments_url,
     issue_number: event.issue.number,
     repository_url: event.issue.repository_url,
-    url: event.issue.pull_request.url,
+    url: event.issue.url,
   };
 }
 
